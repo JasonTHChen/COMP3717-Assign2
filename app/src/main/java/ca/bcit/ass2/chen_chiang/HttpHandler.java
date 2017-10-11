@@ -13,7 +13,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 /**
- * Created by on 10-Oct-2017.
+ * Created by Jason on 10-Oct-2017.
  */
 
 public class HttpHandler {
@@ -24,8 +24,6 @@ public class HttpHandler {
         try {
             URL url = new URL(reqUrl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestProperty("Accept", "application/json");
-            conn.setRequestProperty("Content-Type", "application/json");
             conn.setRequestMethod("GET");
             // read the response
             InputStream in = new BufferedInputStream(conn.getInputStream());

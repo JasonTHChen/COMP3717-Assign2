@@ -9,11 +9,21 @@ public class Country {
     private String capital;
     private String region;
     private String flag;
-    private long population;
-    private long area;
+    private int population;
+    private double area;
     private String[] border;
 
-    public Country(String name, String capital, String region, String flag, long population, long area, String[] border) {
+    public Country() {
+        name = "";
+        capital = "";
+        region = "";
+        flag = "";
+        population = 0;
+        area = 0.0;
+        border = null;
+    }
+
+    public Country(String name, String capital, String region, String flag, int population, double area, String[] border) {
         this.name = name;
         this.capital = capital;
         this.region = region;
@@ -21,10 +31,6 @@ public class Country {
         this.population = population;
         this.area = area;
         this.border = border;
-
-    }
-
-    public Country() {
 
     }
 
@@ -60,19 +66,19 @@ public class Country {
         this.flag = flag;
     }
 
-    public long getPopulation() {
+    public int getPopulation() {
         return population;
     }
 
-    public void setPopulation(long population) {
+    public void setPopulation(int population) {
         this.population = population;
     }
 
-    public long getArea() {
+    public double getArea() {
         return area;
     }
 
-    public void setArea(long area) {
+    public void setArea(double area) {
         this.area = area;
     }
 
