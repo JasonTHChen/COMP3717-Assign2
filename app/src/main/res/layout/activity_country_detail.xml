@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/countryFlag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/placeholder"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:contentDescription="flag"/>
+
+    <TextView
+        android:id="@+id/lblName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/countryFlag"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="27dp"
+        android:text="@string/lblName" />
+
+    <TextView
+        android:id="@+id/lblCapital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="@string/lblCapital"
+        android:layout_below="@+id/lblName"
+        android:layout_alignStart="@+id/lblName" />
+
+    <TextView
+        android:id="@+id/lblRegion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lblCapital"
+        android:layout_below="@+id/lblCapital"
+        android:layout_marginTop="14dp"
+        android:text="@string/lblRegion" />
+
+    <TextView
+        android:id="@+id/lblPopulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lblRegion"
+        android:layout_below="@+id/lblRegion"
+        android:layout_marginTop="16dp"
+        android:text="@string/lblPopulation" />
+
+    <TextView
+        android:id="@+id/lblArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lblPopulation"
+        android:layout_below="@+id/lblPopulation"
+        android:layout_marginTop="15dp"
+        android:text="@string/lblArea" />
+
+    <TextView
+        android:id="@+id/lblBorders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblBorder"
+        android:layout_below="@+id/lblArea"
+        android:layout_alignStart="@+id/lblArea"
+        android:layout_marginTop="13dp" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lblName"
+        android:layout_centerHorizontal="true"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtCapital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtName"
+        android:layout_alignTop="@+id/lblCapital"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtRegion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtCapital"
+        android:layout_alignTop="@+id/lblRegion"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtPopulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lblPopulation"
+        android:layout_centerHorizontal="true"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtPopulation"
+        android:layout_alignTop="@+id/lblArea"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtBorders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtArea"
+        android:layout_alignTop="@+id/lblBorders"
+        android:text="" />
+
+</RelativeLayout>

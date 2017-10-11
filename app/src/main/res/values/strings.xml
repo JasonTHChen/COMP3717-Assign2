@@ -7,4 +7,11 @@
         <item>Europe</item>
         <item>Oceania</item>
     </string-array>
+    <string name="lblName">Name:</string>
+    <string name="lblCapital">Capital:</string>
+    <string name="lblRegion">Region:</string>
+    <string name="lblPopulation">Population:</string>
+    <string name="lblArea">Area:</string>
+    <string name="lblBorder">Borders:</string>
+
 </resources>

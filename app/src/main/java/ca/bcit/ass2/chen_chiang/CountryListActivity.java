@@ -3,6 +3,7 @@ package ca.bcit.ass2.chen_chiang;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -19,7 +20,6 @@ public class CountryListActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         Intent i = getIntent();
         String region = i.getStringExtra("regionName");
 
@@ -30,5 +30,10 @@ public class CountryListActivity extends ListActivity {
         listCountries.setAdapter(adapter);
     }
 
-
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        Intent countryDetail = new Intent(this, CountryDetailActivity.class);
+        countryDetail.putExtra("name", l.getItemAtPosition(position).toString());
+        startActivity(countryDetail);
+    }
 }

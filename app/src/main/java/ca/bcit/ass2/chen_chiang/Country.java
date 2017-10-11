@@ -63,7 +63,11 @@ public class Country {
     }
 
     public void setFlag(String flag) {
-        this.flag = flag;
+        if(flag.charAt(4) == 's') {
+            this.flag = flag.substring(0,4) + flag.substring(5);
+        } else {
+            this.flag = flag;
+        }
     }
 
     public int getPopulation() {

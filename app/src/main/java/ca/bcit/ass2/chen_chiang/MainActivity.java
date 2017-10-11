@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
                     country.setCapital(countryJson.getString("capital"));
                     country.setRegion(countryJson.getString("region"));
                     country.setPopulation(countryJson.getInt("population"));
-                    if (countryJson.getString("area").equals("null")) {
+                    if (!countryJson.getString("area").equals("null")) {
                         country.setArea(countryJson.getDouble("area"));
                     }
                     JSONArray bordersJson = countryJson.getJSONArray("borders");
@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
                     country.setBorder(borders);
                     country.setFlag(countryJson.getString("flag"));
 
-                    CountryList.countries.add(country);
+                    CountryList.addCountry(country);
                 }
             } catch (final JSONException e) {
                 Log.e(TAG, "Json parsing error: " + e.getMessage());

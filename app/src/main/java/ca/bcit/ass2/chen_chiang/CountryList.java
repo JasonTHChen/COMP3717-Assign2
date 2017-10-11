@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class CountryList {
 
-    public static ArrayList<Country> countries;
+    public static ArrayList<Country> countries = new ArrayList<Country>();
 
     public static void addCountry(Country country) {
         countries.add(country);
@@ -27,6 +27,16 @@ public class CountryList {
 
     public static int getCountrySize() {
         return countries.size();
+    }
+
+
+    public static Country searchCountryByName(String countryName) {
+        for (int i = 0; i < countries.size(); i++) {
+            if (countries.get(i).getName().equals(countryName)) {
+                return countries.get(i);
+            }
+        }
+        return null;
     }
 
 

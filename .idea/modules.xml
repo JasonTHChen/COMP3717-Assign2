@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/COMP3717-Assign2.iml" filepath="$PROJECT_DIR$/COMP3717-Assign2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chen_Chiang.iml" filepath="$PROJECT_DIR$/Chen_Chiang.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
