@@ -9,6 +9,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,7 +27,7 @@ import java.net.URL;
  */
 
 public class CountryDetailActivity extends Activity {
-    private ImageView flag;
+    private WebView flag;
     private ProgressDialog dialog;
 
     @Override
@@ -34,8 +36,12 @@ public class CountryDetailActivity extends Activity {
         setContentView(R.layout.activity_country_detail);
 
         Country country = CountryList.searchCountryByName(getIntent().getStringExtra("name"));
-        flag = (ImageView) findViewById(R.id.countryFlag);
-        new ImageDownloaderTask(flag).execute(country.getFlag());
+        flag = (WebView) findViewById(R.id.countryFlag);
+        flag.getSettings().setLoadWithOverviewMode(true);
+        flag.getSettings().setUseWideViewPort(true);
+        flag.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
+
+        flag.loadUrl(country.getFlag());
 
         TextView area = (TextView) findViewById(R.id.txtArea);
         TextView name = (TextView) findViewById(R.id.txtName);
@@ -60,37 +66,5 @@ public class CountryDetailActivity extends Activity {
         borders.setText(stringBorder);
         area.setText(Double.toString(country.getArea()));
 
-    }
-
-    class ImageDownloaderTask extends AsyncTask<String, Void, Drawable> {
-        private final WeakReference<ImageView> imageViewReference;
-
-        public ImageDownloaderTask(ImageView imageView) {
-            imageViewReference = new WeakReference<ImageView>(imageView);
-        }
-
-        @Override
-        protected Drawable doInBackground(String... params) {
-            try {
-                final URL url = new URL(params[0]);
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                InputStream inputStream = urlConnection.getInputStream();
-                SVG svg = SVGParser. getSVGFromInputStream(inputStream);
-                Drawable drawable = svg.createPictureDrawable();
-                return drawable;
-            } catch (Exception e) {
-                Log.e("MainActivity", e.getMessage(), e);
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Drawable drawable) {
-            if(drawable != null){
-                // Try using your library and adding this layer type before switching your SVG parsing
-                flag.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-                flag.setImageDrawable(drawable);
-            }
-        }
     }
 }
