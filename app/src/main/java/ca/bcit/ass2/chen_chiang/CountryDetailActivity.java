@@ -40,8 +40,8 @@ public class CountryDetailActivity extends Activity {
         flag.getSettings().setLoadWithOverviewMode(true);
         flag.getSettings().setUseWideViewPort(true);
         flag.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
-
-        flag.loadUrl(country.getFlag());
+        String flagHtml = "<img src='" + country.getFlag() + "' width:'200px' height:'100px'/>";
+        flag.loadDataWithBaseURL(null, flagHtml, "text/html", "utf-8", null);
 
         TextView area = (TextView) findViewById(R.id.txtArea);
         TextView name = (TextView) findViewById(R.id.txtName);
