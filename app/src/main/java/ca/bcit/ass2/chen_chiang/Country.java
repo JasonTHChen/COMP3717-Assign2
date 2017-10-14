@@ -1,7 +1,7 @@
 package ca.bcit.ass2.chen_chiang;
 
 /**
- * Created by woody on 10-Oct-2017.
+ * Created by Jason on 10-Oct-2017.
  */
 
 public class Country {
@@ -63,11 +63,7 @@ public class Country {
     }
 
     public void setFlag(String flag) {
-        if(flag.charAt(4) == 's') {
-            this.flag = flag.substring(0,4) + flag.substring(5);
-        } else {
-            this.flag = flag;
-        }
+        this.flag = flag;
     }
 
     public int getPopulation() {

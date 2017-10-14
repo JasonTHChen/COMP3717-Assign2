@@ -5,23 +5,28 @@
     android:layout_height="match_parent"
     tools:context="ca.bcit.ass2.chen_chiang.CountryDetailActivity">
 
+    <View
+        android:id="@+id/vertical_separator"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_marginLeft="250dp"
+        android:visibility="invisible"/>
+
     <WebView
         android:id="@+id/webView_detail_flag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginStart="120dp"
+        android:layout_alignStart="@+id/vertical_separator"
+        android:layout_centerVertical="true"/>
 
     <TextView
         android:id="@+id/textView_detail_nameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/webView_detail_flag"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
         android:text="@string/lblName" />
 
@@ -31,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView_detail_nameLabel"
         android:layout_below="@+id/textView_detail_nameLabel"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="@string/lblCapital" />
 
     <TextView
@@ -40,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView_detail_capitalLabel"
         android:layout_below="@+id/textView_detail_capitalLabel"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="@string/lblRegion" />
 
     <TextView
@@ -49,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView_detail_regionLabel"
         android:layout_below="@+id/textView_detail_regionLabel"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="@string/lblPopulation" />
 
     <TextView
@@ -58,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView_detail_populationLabel"
         android:layout_below="@+id/textView_detail_populationLabel"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="@string/lblArea" />
 
     <TextView
@@ -67,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView_detail_areaLabel"
         android:layout_below="@+id/textView_detail_areaLabel"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="@string/lblBorder" />
 
     <TextView
@@ -75,42 +80,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView_detail_nameLabel"
-        android:layout_centerHorizontal="true" />
+        android:layout_toEndOf="@+id/textView_detail_populationLabel"
+        android:layout_marginStart="20dp" />
 
     <TextView
         android:id="@+id/textView_detail_capital"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_toEndOf="@+id/textView_detail_populationLabel"
+        android:layout_marginStart="20dp"
         android:layout_alignTop="@+id/textView_detail_capitalLabel" />
 
     <TextView
         android:id="@+id/textView_detail_region"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_toEndOf="@+id/textView_detail_populationLabel"
+        android:layout_marginStart="20dp"
         android:layout_alignTop="@+id/textView_detail_regionLabel" />
 
     <TextView
         android:id="@+id/textView_detail_population"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_toEndOf="@+id/textView_detail_populationLabel"
+        android:layout_marginStart="20dp"
         android:layout_alignTop="@+id/textView_detail_populationLabel" />
 
     <TextView
         android:id="@+id/textView_detail_area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_toEndOf="@+id/textView_detail_populationLabel"
+        android:layout_marginStart="20dp"
         android:layout_alignTop="@+id/textView_detail_areaLabel" />
 
     <TextView
         android:id="@+id/textView_detail_border"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView_detail_borderLabel"
-        android:layout_toEndOf="@+id/textView_detail_borderLabel"
-        android:layout_marginStart="20dp"/>
+        android:layout_toEndOf="@+id/textView_detail_populationLabel"
+        android:layout_marginStart="20dp"
+        android:layout_alignTop="@+id/textView_detail_borderLabel" />
 
 </RelativeLayout>

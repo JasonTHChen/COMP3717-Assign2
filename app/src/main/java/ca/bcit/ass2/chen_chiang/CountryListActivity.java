@@ -15,15 +15,13 @@ import java.util.ArrayList;
 
 public class CountryListActivity extends ListActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent i = getIntent();
         String region = i.getStringExtra("regionName");
 
-        ArrayList<String> countryNames =  CountryList.searchByRegion(region);
+        ArrayList<String> countryNames = CountryList.searchByRegion(region);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, countryNames);
         ListView listCountries = getListView();
@@ -32,7 +30,7 @@ public class CountryListActivity extends ListActivity {
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        Intent countryDetail = new Intent(this, CountryDetailActivity.class);
+        Intent countryDetail = new Intent(CountryListActivity.this, CountryDetailActivity.class);
         countryDetail.putExtra("name", l.getItemAtPosition(position).toString());
         startActivity(countryDetail);
     }

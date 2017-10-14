@@ -1,9 +1,11 @@
 package ca.bcit.ass2.chen_chiang;
 
+import android.support.annotation.Nullable;
+
 import java.util.ArrayList;
 
 /**
- * Created by woody on 11-Oct-2017.
+ * Created by Jason on 11-Oct-2017.
  */
 
 public class CountryList {
@@ -25,11 +27,7 @@ public class CountryList {
         return countryNames;
     }
 
-    public static int getCountrySize() {
-        return countries.size();
-    }
-
-
+    @Nullable
     public static Country searchCountryByName(String countryName) {
         for (int i = 0; i < countries.size(); i++) {
             if (countries.get(i).getName().equals(countryName)) {

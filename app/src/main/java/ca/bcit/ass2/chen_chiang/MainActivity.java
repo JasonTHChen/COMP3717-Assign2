@@ -19,18 +19,17 @@ public class MainActivity extends Activity {
 
     private String TAG = MainActivity.class.getSimpleName();
 
-    private static String SERVICE_URL = "http://restcountries.eu/rest/v2/all";
-    private ProgressDialog dialog;
-
+    private static final String SERVICE_URL = "https://restcountries.eu/rest/v2/all";
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ListView continentList = findViewById(R.id.listView_main_continents);
-
         new Contacts().execute();
+
+        final ListView continentList = findViewById(R.id.listView_main_continents);
 
         continentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -105,18 +104,17 @@ public class MainActivity extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            dialog = new ProgressDialog(MainActivity.this);
-            dialog.setMessage("Please Wait...");
-            dialog.setCancelable(false);
-            dialog.show();
+            progressDialog = new ProgressDialog(MainActivity.this);
+            progressDialog.setMessage("Please Wait...");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
         }
 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            if (dialog.isShowing()) {
-                dialog.dismiss();
-
+            if (progressDialog.isShowing()) {
+                progressDialog.dismiss();
             }
         }
     }

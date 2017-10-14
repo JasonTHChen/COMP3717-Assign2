@@ -1,34 +1,15 @@
 package ca.bcit.ass2.chen_chiang;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.larvalabs.svgandroid.SVG;
-import com.larvalabs.svgandroid.SVGParser;
-
-import java.io.InputStream;
-import java.lang.ref.WeakReference;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 /**
- * Created by Chonjou on 2017-10-11.
+ * Created by Jason on 10-Oct-2017.
  */
-
 public class CountryDetailActivity extends Activity {
-    private WebView flag;
-    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,19 +17,19 @@ public class CountryDetailActivity extends Activity {
         setContentView(R.layout.activity_country_detail);
 
         Country country = CountryList.searchCountryByName(getIntent().getStringExtra("name"));
-        flag = (WebView) findViewById(R.id.countryFlag);
+        final WebView flag = findViewById(R.id.webView_detail_flag);
         flag.getSettings().setLoadWithOverviewMode(true);
         flag.getSettings().setUseWideViewPort(true);
-        flag.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
-        String flagHtml = "<img src='" + country.getFlag() + "' width:'200px' height:'100px'/>";
+        flag.setBackgroundColor(Color.TRANSPARENT);
+        String flagHtml = "<img src='" + country.getFlag() + "' width='600px' height='400px' />";
         flag.loadDataWithBaseURL(null, flagHtml, "text/html", "utf-8", null);
 
-        TextView area = (TextView) findViewById(R.id.txtArea);
-        TextView name = (TextView) findViewById(R.id.txtName);
-        TextView capital = (TextView) findViewById(R.id.txtCapital);
-        TextView region = (TextView) findViewById(R.id.txtRegion);
-        TextView population = (TextView) findViewById(R.id.txtPopulation);
-        TextView borders = (TextView) findViewById(R.id.txtBorders);
+        final TextView name = findViewById(R.id.textView_detail_name);
+        final TextView area = findViewById(R.id.textView_detail_area);
+        final TextView capital = findViewById(R.id.textView_detail_capital);
+        final TextView region = findViewById(R.id.textView_detail_region);
+        final TextView population = findViewById(R.id.textView_detail_population);
+        final TextView borders = findViewById(R.id.textView_detail_border);
 
         String stringBorder = "";
         for(int i = 0; i < country.getBorder().length; i++) {

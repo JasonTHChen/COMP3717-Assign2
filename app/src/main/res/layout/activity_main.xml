@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ca.bcit.ass2.chen_chiang.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="ca.bcit.ass2.chen_chiang.MainActivity">
 
     <ListView
+        android:id="@+id/listView_main_continents"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listView_main_continents"
-        android:entries="@array/continents">
-    </ListView>
+        android:entries="@array/continents" />
 
-</LinearLayout>
+</RelativeLayout>
